@@ -1,30 +1,46 @@
-# EduAdmin - Enterprise School Management System
+# 🎓 EduAdmin: University Management Command Center
 
-A modern, responsive, and secure School Management Dashboard built to demonstrate proficiency in React.js, Tailwind CSS, and Frontend Architecture for the Flexisaf SIWES Placement.
+A comprehensive, frontend-focused university administration dashboard built with React. This system demonstrates advanced state management, relational data handling, and real-time UI updates, simulating a full-stack environment using browser persistence.
 
-## 🚀 Live Demo
-[Insert your Vercel or Netlify link here if deployed, or state: "Local Development Only"]
+## 🚀 Key Features
 
-## 🛠️ Tech Stack
-* **Framework:** React.js (Vite)
-* **Styling:** Tailwind CSS (v4)
+* **Global State Persistence:** Utilizes React Context API combined with `LocalStorage` to create a "Single Source of Truth." Data remains persistent across browser refreshes without a backend.
+* **Live "Attend" QR Command Center:** A simulated hardware integration that validates student Matric numbers in real-time. It includes anomaly detection to reject duplicate scans, mitigating proxy attendance.
+* **Smart Financial Ledger:** Real-time calculation of expected revenue and fee defaulters. Features a **"1-Click WhatsApp Notifier"** that automatically drafts and routes fee reminder messages to parents via the WhatsApp Web API.
+* **Relational Course Management:** Dynamic mapping of Teachers to Courses and Courses to Students, automatically calculating departmental enrollment metrics on the fly.
+* **Business Intelligence Dashboard:** Integrates `Recharts` for live financial pie charts and attendance metrics that react instantly to database modifications.
+* **Data Portability:** Built-in client-side CSV export functionality, allowing administrators to download system reports directly to their local machines using the browser's Blob API.
+
+## 💻 Tech Stack
+
+* **Core:** React.js (Vite)
+* **Styling:** Tailwind CSS
 * **Icons:** Lucide-React
-* **Routing:** React Router DOM (v7)
 * **Charts:** Recharts
-* **State Management:** React Hooks (useState, useEffect, useLocation)
+* **QR Generation:** qrcode.react
+* **State Management:** React Context API + Hooks (`useState`, `useEffect`)
 
-## ✨ Key Features
-* **Secure Portal:** Custom Login page with show/hide password functionality and conditional layout rendering.
-* **Attendance Security:** A dedicated module to monitor live QR scan logs, featuring a custom detection logic for **Proxy Attendance** and duplicate scans.
-* **Student CRM:** Fully interactive student directory with real-time search filtering and CRUD operations (Add/Delete students).
-* **Financial Oversight:** Localized (₦) revenue tracking, scholarship monitoring, and transaction status badging.
-* **Academic Analytics:** Visual data representation using Recharts to track weekly attendance volume and enrollment trends.
-* **Responsive Design:** Mobile-first architecture using Tailwind's Grid and Flexbox systems.
+## ⚙️ Installation & Setup
 
-## 📂 Project Structure
-```text
-src/
-├── components/     # Reusable UI atoms (StatCards, Modals, Charts)
-├── pages/          # Individual Page Views (Dashboard, Finance, Login, etc.)
-├── App.jsx         # Main Router and Layout Wrapper
-└── main.jsx        # Entry point
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/yourusername/edu-admin-dashboard.git](https://github.com/yourusername/edu-admin-dashboard.git)
+
+2. Navigate into the project directory:  
+   cd edu-admin-dashboard
+
+3. Install dependencies:
+    npm install
+
+4. Start the development server:
+    npm run dev
+
+
+Architectural Decisions
+To mimic a production environment for this frontend-focused project:
+
+I avoided prop-drilling by encapsulating all CRUD operations within a central AppProvider.
+
+I implemented "Smart Modals" that accept initialData props, allowing the same UI component to seamlessly handle both Create and Update operations.
+
+Filter and search states were kept local to their respective pages to prevent unnecessary global re-renders, optimizing performance.
