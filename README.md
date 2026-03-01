@@ -24,7 +24,7 @@ A comprehensive, frontend-focused university administration dashboard built with
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/yourusername/edu-admin-dashboard.git](https://github.com/yourusername/edu-admin-dashboard.git)
+   git clone [https://github.com/Dheedi001/school-management-dashboard.git](https://github.com/Dheedi001/school-management-dashboard.git)
 
 2. Navigate into the project directory:  
    cd edu-admin-dashboard
