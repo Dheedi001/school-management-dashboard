@@ -5,18 +5,16 @@ import Attendance from "./pages/Attendance";
 import Finance from "./pages/Finance";
 import CourseManagement from "./pages/CourseManagement";
 import TeacherManagement from "./pages/TeacherManagement";
+import Settings from "./pages/Settings"; // Import the Settings page
 import Login from "./pages/Login";
 
-// Create a wrapper component to handle the sidebar logic
 function LayoutWrapper({ children }) {
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
 
   return (
     <div className="flex min-h-screen bg-slate-50">
-      {/* Hide Sidebar if we are on the login page */}
       {!isLoginPage && <Sidebar />}
-      
       <main className={`flex-1 ${!isLoginPage ? "ml-64 p-8" : ""}`}>
         {children}
       </main>
@@ -36,6 +34,7 @@ export default function App() {
           <Route path="/teachers" element={<TeacherManagement />} />
           <Route path="/courses" element={<CourseManagement />} />
           <Route path="/finance" element={<Finance />} />
+          <Route path="/settings" element={<Settings />} /> {/* Settings Route */}
         </Routes>
       </LayoutWrapper>
     </BrowserRouter>

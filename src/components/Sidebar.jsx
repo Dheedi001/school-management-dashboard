@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { 
   LayoutDashboard, Users, UserCheck, BookOpen, 
-  CreditCard, Settings, LogOut, ShieldCheck 
+  CreditCard, Settings as SettingsIcon, LogOut, ShieldCheck 
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -14,6 +14,7 @@ export default function Sidebar() {
     { name: "Teachers", icon: UserCheck, path: "/teachers" },
     { name: "Courses", icon: BookOpen, path: "/courses" },
     { name: "Finance", icon: CreditCard, path: "/finance" },
+    { name: "Settings", icon: SettingsIcon, path: "/settings" }, // Add this line!
   ];
 
   return (
@@ -44,6 +45,14 @@ export default function Sidebar() {
           );
         })}
       </nav>
+      
+      {/* Logout button at the bottom */}
+      <div className="p-4 border-t border-slate-800">
+        <Link to="/login" className="flex items-center gap-3 p-3 rounded-xl hover:text-red-400 hover:bg-red-400/10 transition-all">
+          <LogOut size={20} />
+          <span>Logout</span>
+        </Link>
+      </div>
     </div>
   );
 }
